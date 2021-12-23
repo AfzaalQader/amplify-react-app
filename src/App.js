@@ -1,7 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    fetch("https://api.publicapis.org/entries")
+    .then((res) => res.json())
+    .then((result) => {
+      console.log("Result:::::::::::::::::::: ", result)
+    })
+  });
   return (
     <div className="App">
       <header className="App-header">
